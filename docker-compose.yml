@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dashboard:
+    image: grafana/grafana:5.1.0
+    environment:
+      GF_SERVER_ROOT_URL: 'http://localhost:3000'
+      GF_SECURITY_ADMIN_PASSWORD: 'temporary_admin_password'
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    ports:
+      - '3000:3000'
+volumes:
+  grafana-storage:
+    external: true
