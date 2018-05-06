@@ -17,14 +17,13 @@ services:
     build:
       context: .
       dockerfile: TimescaleDockerfile
-    environment:
-      POSTGRES_USER: 'relativity'
-      POSTGRES_PASSWORD: 'example_temporary_password'
-      POSTGRES_DB: 'relativity'
+    env_file:
+      - config/postgres.env
     volumes:
       - timescaledb-storage:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+
 volumes:
   grafana-storage:
     external: true
