@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex --knexfile ./db/knexfile.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/JakeDluhy/relativity-time-series-service/issues"
   },
-  "homepage": "https://github.com/JakeDluhy/relativity-time-series-service#readme"
+  "homepage": "https://github.com/JakeDluhy/relativity-time-series-service#readme",
+  "dependencies": {
+    "knex": "^0.14.6",
+    "pg": "^7.4.2"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1"
+  }
 }
