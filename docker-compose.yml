@@ -12,6 +12,15 @@ services:
       - '3000:3000'
     depends_on:
       - db
+  data:
+    container_name: dataservice
+    build: .
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+    env_file:
+      - config/postgres.env
   db:
     container_name: timescaledb
     build:
