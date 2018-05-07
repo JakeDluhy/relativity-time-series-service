@@ -1,3 +1,7 @@
-const types = require('./types');
+const knex = require('../services/knex');
 
-types();
+const types = require('./types');
+const locations = require('./locations');
+
+locations()
+.then(knex.destroy);
