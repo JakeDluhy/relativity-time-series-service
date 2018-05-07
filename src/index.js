@@ -1,8 +1,5 @@
 const knex = require('./services/knex');
 
-knex('pg_catalog.pg_tables')
-.select('tablename')
-.where({ schemaname: 'public' })
-.then((rows) => {
-  console.log(rows);
-});
+knex('agency_types')
+.whereIn('id', [1,2,3,4,5,6])
+.then(console.log)

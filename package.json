@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
+    "seed": "node src/seed/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "knex": "knex --knexfile ./db/knexfile.js"
   },
@@ -21,7 +22,10 @@
   "dependencies": {
     "dotenv": "^5.0.1",
     "knex": "^0.14.6",
-    "pg": "^7.4.2"
+    "lodash": "^4.17.10",
+    "pg": "^7.4.2",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {}
 }
