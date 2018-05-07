@@ -6,7 +6,7 @@ const _ = require('lodash');
 
 const knex = require('../services/knex');
 const launch = require('../services/launch-library');
-const { getMappedTypes } = require('../helpers/lodash');
+const { filterAttributes, mapKeysAndValues } = require('../helpers/lodash');
 
 const PAD_ATTRS = [
   'id',
@@ -31,25 +31,26 @@ const pads = () => {
   .then(({ pads }) => {
     const agencyPads = [];
 
-    const filteredPads = getMappedTypes(
-      pads.map((pad) => {
-        return _.mapKeys(pad, (value, key) => {
-          if(key === 'locationid') return 'location_id'
-          if(key === 'agencies' && Array.isArray(value)) {
-            const agencyPadObjs = value.map(({ id }) => ({
-              pad_id: pad.id,
-              agency_id: id,
-            }));
+    const filteredPads = filterAttributes(
+      mapKeysAndValues(pads, {
+        locationid: (v, k) => ['location_id', v],
+        agencies:   (v, k, obj) => {
+          if(!v) return [k, v];
 
-            agencyPads.push(...agencyPadObjs);
-          }
-          return key;
-        });
+          const agencyPadObjs = v.map(({ id }) => ({
+            pad_id: obj.id,
+            agency_id: id,
+          }));
+
+          agencyPads.push(...agencyPadObjs);
+
+          return [k, v];
+        },
       }),
       PAD_ATTRS,
     );
 
-    const filteredAgencyPads = getMappedTypes(agencyPads, AGENCY_PAD_ATTRS);
+    const filteredAgencyPads = filterAttributes(agencyPads, AGENCY_PAD_ATTRS);
 
     return knex('pads')
     .insert(filteredPads)

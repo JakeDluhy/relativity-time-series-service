@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 const knex = require('../services/knex');
 const launch = require('../services/launch-library');
-const { getMappedTypes } = require('../helpers/lodash');
+const { filterAttributes, mapKeysAndValues } = require('../helpers/lodash');
 
 const ATTRS = [
   'id',
@@ -21,16 +21,10 @@ const agencies = () => {
 
   return launch('/agency', { limit: 300 })
   .then(({ agencies }) => {
-    const filteredData = getMappedTypes(
-      agencies.map((agency) => {
-        return _.fromPairs(_.map(agency, (value, key) => {
-          if(key === 'type') return ['agency_type_id', value];
-          if(key === 'countryCode') {
-            return ['country_codes', value.split(',')];
-          }
-
-          return [key, value];
-        }));
+    const filteredData = filterAttributes(
+      mapKeysAndValues(agencies, {
+        type:        (v, k) => ['agency_type_id', v],
+        countryCode: (v, k) => ['country_codes', v.split(',')],
       }),
       ATTRS,
     );

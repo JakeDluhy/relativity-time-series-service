@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 const knex = require('../services/knex');
 const launch = require('../services/launch-library');
-const { getMappedTypes } = require('../helpers/lodash');
+const { filterAttributes } = require('../helpers/lodash');
 
 const ATTRS = ['id', 'name', 'countrycode', 'wikiURL', 'infoURLs', 'changed'];
 
@@ -20,7 +20,7 @@ const locations = () => {
   .then(({ locations }) => {
     return knex('locations')
     .insert([
-      ...getMappedTypes(locations, ATTRS),
+      ...filterAttributes(locations, ATTRS),
       ...ADDITONAL_LOCATIONS,
     ]);
   });

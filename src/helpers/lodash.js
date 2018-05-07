@@ -1,11 +1,23 @@
 const _ = require('lodash');
 
-const getMappedTypes = (types, attrs) => {
-  return _.map(types, (type) => {
-    return _.pick(type, attrs);
+const filterAttributes = (data, attrs) => {
+  return _.map(data, (d) => {
+    return _.pick(d, attrs);
   });
-}
+};
+
+const mapKeysAndValues = (data, keyValueMap) => {
+  return data.map((d) => (
+    _.fromPairs(
+      _.map(d, (value, key) => {
+        if(keyValueMap[key]) return keyValueMap[key](value, key, d);
+        return [key, value];
+      })
+    )
+  ));
+};
 
 module.exports = {
-  getMappedTypes,
+  filterAttributes,
+  mapKeysAndValues,
 };
