@@ -1,4 +1,4 @@
-const TABLE_NAME = 'agency_types'
+const TABLE_NAME = 'agency_types';
 
 exports.up = function({ schema }) {
   return schema.createTable(TABLE_NAME, (table) => {
