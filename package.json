@@ -19,10 +19,9 @@
   },
   "homepage": "https://github.com/JakeDluhy/relativity-time-series-service#readme",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "knex": "^0.14.6",
     "pg": "^7.4.2"
   },
-  "devDependencies": {
-    "dotenv": "^5.0.1"
-  }
+  "devDependencies": {}
 }
