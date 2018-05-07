@@ -55,7 +55,7 @@ const pads = () => {
     return knex('pads')
     .insert(filteredPads)
     .then(() => {
-      knex('agency_pads')
+      return knex('agency_pads')
       .insert(filteredAgencyPads);
     });
   });

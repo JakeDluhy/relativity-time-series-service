@@ -25,15 +25,15 @@ const rocketFamilies = () => {
 
     const filteredRocketFamilies = filterAttributes(
       mapKeysAndValues(RocketFamilies, {
-        agencies:   (v, k, obj) => {
+        agencies: (v, k, obj) => {
           if(!v) return [k, v];
 
-          const agencyRocketFamilies = v.map(({ id }) => ({
+          const agencyRocketFamilyObjs = v.map(({ id }) => ({
             rocket_family_id: obj.id,
             agency_id: id,
           }));
 
-          agencyRocketFamilies.push(...agencyRocketFamilies);
+          agencyRocketFamilies.push(...agencyRocketFamilyObjs);
 
           return [k, v];
         },
@@ -49,7 +49,7 @@ const rocketFamilies = () => {
     return knex('rocket_families')
     .insert(filteredRocketFamilies)
     .then(() => {
-      knex('agency_rocket_families')
+      return knex('agency_rocket_families')
       .insert(filteredAgencyRocketFamilies);
     });
   });
