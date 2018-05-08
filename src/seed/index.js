@@ -7,6 +7,7 @@ const padsAndAgencyPads = require('./pads-and-agency-pads');
 const rocketFamilies = require('./rocket-families');
 const rockets = require('./rockets');
 const launchStatuses = require('./launch-statuses');
+const launches = require('./launches');
 
 types()
 .then(locations)
@@ -15,4 +16,5 @@ types()
 .then(rocketFamilies)
 .then(rockets)
 .then(launchStatuses)
+.then(launches)
 .then(knex.destroy);

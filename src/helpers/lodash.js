@@ -17,7 +17,22 @@ const mapKeysAndValues = (data, keyValueMap) => {
   ));
 };
 
+const mapKeysAndValuesWithFilter = (data, keyValueMap, attrs) => {
+  return _.map((d) => (
+    _.pick(
+      _.fromPairs(
+        _.map(d, (value, key) => {
+          if(keyValueMap[key]) return keyValueMap[key](value, key, d);
+          return [key, value];
+        })
+      ),
+      attrs,
+    )
+  ));
+}
+
 module.exports = {
   filterAttributes,
   mapKeysAndValues,
+  mapKeysAndValuesWithFilter,
 };
