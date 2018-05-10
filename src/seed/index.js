@@ -8,6 +8,7 @@ const rocketFamilies = require('./rocket-families');
 const rockets = require('./rockets');
 const launchStatuses = require('./launch-statuses');
 const launches = require('./launches');
+const missions = require('./missions');
 
 types()
 .then(locations)
@@ -17,4 +18,5 @@ types()
 .then(rockets)
 .then(launchStatuses)
 .then(launches)
+.then(missions)
 .then(knex.destroy);

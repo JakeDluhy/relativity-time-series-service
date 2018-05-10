@@ -6,5 +6,6 @@ module.exports = (uri, qs = {}, headers = {}) => {
     qs,
     headers,
     json: true,
+    useQuerystring: true,
   });
 }
