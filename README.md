@@ -3,6 +3,7 @@ This is a solution to the relativity candidate project: https://github.com/Relat
 
 ## Installation
 - Pull the repo `git clone git@github.com:JakeDluhy/relativity-time-series-service.git`
+- For safety reasons, sensitive environment variables are not checked into source. However example files are located in `./config/`. For the purposes of this demo, you can copy and rename `grafana.env.example` and `postgres.env.example` to `grafana.env` and `postgres.env`.
 - Run `docker-compose build` to build the image
 - Run `docker-compose run data npm run knex migrate:latest && docker-compose run data npm run seed` to seed the database with data from the API
 - Run `docker-compose up`, navigate to http://localhost:3000, and log in using username `admin` and password `temporary_admin_password`
