@@ -35,6 +35,4 @@ services:
 
 volumes:
   grafana-storage:
-    external: true
   timescaledb-storage:
-    external: true

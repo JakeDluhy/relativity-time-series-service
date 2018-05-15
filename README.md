@@ -3,8 +3,8 @@ This is a solution to the relativity candidate project: https://github.com/Relat
 
 ## Installation
 - Pull the repo `git clone git@github.com:JakeDluhy/relativity-time-series-service.git`
-- Prepare grafana `docker volume create grafana-storage`
-- Prepare timescaledb `docker volume create timescaledb-storage`
+- Run `docker-compose build` to build the image
+- Run `docker-compose run data npm run knex migrate:latest && docker-compose run data npm run seed` to seed the database with data from the API
 - Run `docker-compose up`, navigate to http://localhost:3000, and log in using username `admin` and password `temporary_admin_password`
 - Configure a data source:
   * Name: `timescaledb`
