@@ -2,10 +2,9 @@
 This is a solution to the relativity candidate project: https://github.com/RelativitySpace/sw_candidate_proj2. It uses TimescaleDB as a time series database with Grafana as an analytics dashboard. Node.js scripts are used to populate the database from the https://launchlibrary.net API for rocket launches.
 
 ## Installation
-- Instructions are assuming Ubuntu 14.04
+- Instructions are assuming Ubuntu 16.04
 - Install `git`: `apt-get update && apt-get install git-core`
 - Install `docker`: https://docs.docker.com/install/linux/docker-ce/ubuntu/#extra-steps-for-aufs
-  * `sudo apt-get update && sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual`
   * `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
   * `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
   * `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
