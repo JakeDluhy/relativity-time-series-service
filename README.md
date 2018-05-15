@@ -16,3 +16,24 @@ This is a solution to the relativity candidate project: https://github.com/Relat
   * Password: `super_secret_password`
   * SSL Mode: `disable`
 - Add the dashboards. Click the `+` on the left hand side, followed by `Import`. The pre-configured dashboards are in `./grafana/dashboards`. Either copy and paste the json into the field presented for importing, or upload the `.json` files directly. This should load up two preconfigured dashboards: `Launch Information` and `Rocket Information`
+
+## Notes
+When looking at the dashboards, there's a few things to note:
+
+- The data is not super clean. As such I did ended up just trying out some different graphs and queries and picked some that worked/were interesting.
+- Grafana biases towards small timescales in it's configuration. Since we are dealing with rocket launches it makes sense to zoom out.
+
+## Possible Enhancements
+Unfortunately, I was not able to add all the bells, whistles, and enhancements that I wanted to. If I had more time, these are some of the changes I would have liked to make:
+
+- One-liner initialization. Although `docker` and `docker-compose` certainly reduce setup time and headaches. There are provisioning features in grafana where I could have preconfigured the data source and dashboards.
+- Recurring CRON Job to pull fresh data and add it to the database. That was the main purpose of the `data` service after seeding the database, but I didn't get around to it.
+- Better utilizing relational data to pull interesting queries. The cool thing about loading (almost) all of the `launchlibrary` data into the db is it offers some interesting relationships (agencies, rockets, rocket families, etc...). It would be cool to explore these.
+- PostGIS. The `pads`  table contains longitude and latitude data. It would have been cool to explore that.
+
+## Technical Debt
+As I worked, I focused on certain parts of the project and neglected others unfortunately. These are parts I noted that I would want to revisit and fix up.
+
+- Indexes. I did not add any indexes for my tables (except for the default time index by making launches into a hypertable). I partially did this in order to find out which indexes were necessary for the queries I was running on my dashboards, but I ran out of time to go back and implement + verify them.
+- Clean up seed code. Although it's pretty clean, I did change approaches to pulling and iterating through the data midway through, and it could be unified a bit.
+- Utilizing and understanding timescaledb better. I love the idea of timescaledb, and from what I've read it offers great performance. I would love to better understand how it works internally, and perhaps make use of some of the helper Postgres functions it provides.
