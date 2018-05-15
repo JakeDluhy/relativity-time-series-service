@@ -9,13 +9,13 @@ After choosing the launchlibrary dataset for my project, I quickly realized that
 Using that as a reference made it much easier to construct and seed my own database. Looking at the relations, it was clear that there was a certain order I would need to seed the DB in, in order to maintain foreign key constraints.
 
 ## Installation
-- Instructions are assuming Ubuntu 16.04
+- Instructions are tested on Ubuntu 14.04 and 16.04
 - Install `git`: `apt-get update && apt-get install git-core`
 - Install `docker`: https://docs.docker.com/install/linux/docker-ce/ubuntu/#extra-steps-for-aufs
   * `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
   * `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
   * `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
-  * `sudo apt-get install docker.io`
+  * `sudo apt-get update && sudo apt-get install docker-ce`
 - Install `docker-compose`: `sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose`
 - Create a new subdirectory `app`, pull the repo `git clone https://github.com/JakeDluhy/relativity-time-series-service.git`, and `cd relativity-time-series-service`
 - For safety reasons, sensitive environment variables are not checked into source. However example files are located in `./config/`. For the purposes of this demo, you can copy and rename `grafana.env.example` and `postgres.env.example` to `grafana.env` and `postgres.env`.
