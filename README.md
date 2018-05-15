@@ -1,5 +1,5 @@
 # Relativity Time Series Solution
-This is a solution to the relativity candidate project: https://github.com/RelativitySpace/sw_candidate_proj2. It uses TimescaleDB as a time series database with Grafana as an analytics dashboard. Node.js scripts are used to populate the database.
+This is a solution to the relativity candidate project: https://github.com/RelativitySpace/sw_candidate_proj2. It uses TimescaleDB as a time series database with Grafana as an analytics dashboard. Node.js scripts are used to populate the database from the https://launchlibrary.net API for rocket launches.
 
 ## Installation
 - Pull the repo `git clone git@github.com:JakeDluhy/relativity-time-series-service.git`
@@ -14,3 +14,4 @@ This is a solution to the relativity candidate project: https://github.com/Relat
   * User: `grafanareader`
   * Password: `super_secret_password`
   * SSL Mode: `disable`
+- Add the dashboards. Click the `+` on the left hand side, followed by `Import`. The pre-configured dashboards are in `./grafana/dashboards`. Either copy and paste the json into the field presented for importing, or upload the `.json` files directly. This should load up two preconfigured dashboards: `Launch Information` and `Rocket Information`

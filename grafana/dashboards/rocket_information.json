@@ -1,0 +1,1243 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:7951",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "iteration": 1526360793912,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#0a437c",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "name",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT\n  launches.rocket_id,\n  COUNT(launches.rocket_id),\n  \"rockets\".name\nFROM\n  launches\nINNER JOIN\n  \"rockets\" ON \"rockets\".id = launches.rocket_id\nGROUP BY\n  launches.rocket_id,\n  \"rockets\".name\nORDER BY\n  COUNT(launches.rocket_id) DESC\nLIMIT 1",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Most Launched Rocket",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#508642",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "id": 2,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "name",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT\n  launches.location_id,\n  COUNT(launches.location_id),\n  \"locations\".name\nFROM\n  launches\nINNER JOIN\n  \"locations\" ON \"locations\".id = launches.location_id\nGROUP BY\n  launches.location_id,\n  \"locations\".name\nORDER BY\n  COUNT(launches.location_id) DESC\nLIMIT 1",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Most Launched Location",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#bf1b00",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "name",
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT\n  name,\n  weight,\n  MAX(weight)\nFROM\n  payloads\nGROUP BY\n  name, weight\nORDER BY\n  MAX(weight) DESC\nLIMIT 1",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Heaviest Payload",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT\n  $__timeGroup(\"windowstart\", '8760h'),\n  COUNT(*)\nFROM\n  launches\nWHERE\n  $__timeFilter(windowstart) AND rocket_id = $rocket_id\nGROUP BY time\nORDER BY time\n",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Number of Launches By Rocket",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "Soyuz U",
+          "value": "35"
+        },
+        "datasource": "timescaledb",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Rocket Name",
+        "multi": false,
+        "name": "rocket_id",
+        "options": [
+          {
+            "selected": false,
+            "text": "Angara 1.2",
+            "value": "145"
+          },
+          {
+            "selected": false,
+            "text": "Angara A5/Briz-M",
+            "value": "87"
+          },
+          {
+            "selected": false,
+            "text": "Angara-1.2pp",
+            "value": "79"
+          },
+          {
+            "selected": false,
+            "text": "Antares 110",
+            "value": "91"
+          },
+          {
+            "selected": false,
+            "text": "Antares 120",
+            "value": "74"
+          },
+          {
+            "selected": false,
+            "text": "Antares 130",
+            "value": "82"
+          },
+          {
+            "selected": false,
+            "text": "Antares 230",
+            "value": "117"
+          },
+          {
+            "selected": false,
+            "text": "Ares I",
+            "value": "158"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 5 ECA",
+            "value": "27"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 5 ES",
+            "value": "9"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 5 G",
+            "value": "156"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 5 G+",
+            "value": "175"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 5 GS",
+            "value": "174"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 62",
+            "value": "164"
+          },
+          {
+            "selected": false,
+            "text": "Ariane 64",
+            "value": "165"
+          },
+          {
+            "selected": false,
+            "text": "Atlas LV-3B",
+            "value": "140"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 401",
+            "value": "26"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 411",
+            "value": "106"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 421",
+            "value": "55"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 431",
+            "value": "119"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 501",
+            "value": "32"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 531",
+            "value": "10"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 541",
+            "value": "2"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 551",
+            "value": "37"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V 552",
+            "value": "166"
+          },
+          {
+            "selected": false,
+            "text": "Atlas V N22",
+            "value": "118"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7320",
+            "value": "107"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7320-10C",
+            "value": "78"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7420",
+            "value": "183"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7420-10",
+            "value": "127"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7920-10",
+            "value": "112"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7920-10C",
+            "value": "132"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7920H",
+            "value": "109"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7920H-10C",
+            "value": "182"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7925",
+            "value": "179"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7925-10C",
+            "value": "178"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7925-10L",
+            "value": "184"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7925-9.5",
+            "value": "181"
+          },
+          {
+            "selected": false,
+            "text": "Delta II 7925H-9.5",
+            "value": "180"
+          },
+          {
+            "selected": false,
+            "text": "Delta IV",
+            "value": "7"
+          },
+          {
+            "selected": false,
+            "text": "Delta IV Heavy",
+            "value": "21"
+          },
+          {
+            "selected": false,
+            "text": "Delta IV M+(4,2)",
+            "value": "40"
+          },
+          {
+            "selected": false,
+            "text": "Delta IV M+(5,2)",
+            "value": "41"
+          },
+          {
+            "selected": false,
+            "text": "Delta IV M+(5,4)",
+            "value": "42"
+          },
+          {
+            "selected": false,
+            "text": "Dnepr 1",
+            "value": "54"
+          },
+          {
+            "selected": false,
+            "text": "Electron",
+            "value": "148"
+          },
+          {
+            "selected": false,
+            "text": "Epsilon ",
+            "value": "168"
+          },
+          {
+            "selected": false,
+            "text": "Epsilon-1",
+            "value": "95"
+          },
+          {
+            "selected": false,
+            "text": "Epsilon-2",
+            "value": "161"
+          },
+          {
+            "selected": false,
+            "text": "Falcon 1",
+            "value": "160"
+          },
+          {
+            "selected": false,
+            "text": "Falcon 9 Full Thrust",
+            "value": "80"
+          },
+          {
+            "selected": false,
+            "text": "Falcon 9 v1.0",
+            "value": "90"
+          },
+          {
+            "selected": false,
+            "text": "Falcon 9 v1.1",
+            "value": "1"
+          },
+          {
+            "selected": false,
+            "text": "Falcon Heavy",
+            "value": "58"
+          },
+          {
+            "selected": false,
+            "text": "GSLV",
+            "value": "17"
+          },
+          {
+            "selected": false,
+            "text": "GSLV Mk II",
+            "value": "60"
+          },
+          {
+            "selected": false,
+            "text": "GSLV Mk III",
+            "value": "85"
+          },
+          {
+            "selected": false,
+            "text": "H-IIA",
+            "value": "23"
+          },
+          {
+            "selected": false,
+            "text": "H-IIA 202",
+            "value": "53"
+          },
+          {
+            "selected": false,
+            "text": "H-IIA 204",
+            "value": "67"
+          },
+          {
+            "selected": false,
+            "text": "H-IIB",
+            "value": "11"
+          },
+          {
+            "selected": false,
+            "text": "H-IIB 304",
+            "value": "93"
+          },
+          {
+            "selected": false,
+            "text": "H-III ",
+            "value": "48"
+          },
+          {
+            "selected": false,
+            "text": "KSLV 2",
+            "value": "169"
+          },
+          {
+            "selected": false,
+            "text": "Kaituozhe-2",
+            "value": "157"
+          },
+          {
+            "selected": false,
+            "text": "Kosmos-3M",
+            "value": "122"
+          },
+          {
+            "selected": false,
+            "text": "Kuaizhou ",
+            "value": "84"
+          },
+          {
+            "selected": false,
+            "text": "Kuaizhou-1A",
+            "value": "155"
+          },
+          {
+            "selected": false,
+            "text": "LauncherOne",
+            "value": "173"
+          },
+          {
+            "selected": false,
+            "text": "Long March 1",
+            "value": "170"
+          },
+          {
+            "selected": false,
+            "text": "Long March 11",
+            "value": "71"
+          },
+          {
+            "selected": false,
+            "text": "Long March 2C",
+            "value": "75"
+          },
+          {
+            "selected": false,
+            "text": "Long March 2C/SMA",
+            "value": "103"
+          },
+          {
+            "selected": false,
+            "text": "Long March 2D",
+            "value": "73"
+          },
+          {
+            "selected": false,
+            "text": "Long March 2F",
+            "value": "25"
+          },
+          {
+            "selected": false,
+            "text": "Long March 2F/G",
+            "value": "111"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3A",
+            "value": "88"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3B",
+            "value": "22"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3B / YZ-1",
+            "value": "89"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3B/E",
+            "value": "69"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3C",
+            "value": "97"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3C / YZ-1",
+            "value": "51"
+          },
+          {
+            "selected": false,
+            "text": "Long March 3C/E",
+            "value": "81"
+          },
+          {
+            "selected": false,
+            "text": "Long March 4B",
+            "value": "16"
+          },
+          {
+            "selected": false,
+            "text": "Long March 4C",
+            "value": "70"
+          },
+          {
+            "selected": false,
+            "text": "Long March 5 ",
+            "value": "116"
+          },
+          {
+            "selected": false,
+            "text": "Long March 5 / YZ-2",
+            "value": "146"
+          },
+          {
+            "selected": false,
+            "text": "Long March 6 ",
+            "value": "72"
+          },
+          {
+            "selected": false,
+            "text": "Long March 7 ",
+            "value": "130"
+          },
+          {
+            "selected": false,
+            "text": "Long March 7 / YZ-1A",
+            "value": "143"
+          },
+          {
+            "selected": false,
+            "text": "Long March ?",
+            "value": "167"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur I",
+            "value": "19"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur IV",
+            "value": "59"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur IV HAPS",
+            "value": "128"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur IV+",
+            "value": "110"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur V",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "Minotaur-C",
+            "value": "105"
+          },
+          {
+            "selected": false,
+            "text": "Molniya-M/2BL",
+            "value": "126"
+          },
+          {
+            "selected": false,
+            "text": "N1",
+            "value": "159"
+          },
+          {
+            "selected": false,
+            "text": "Naro-1",
+            "value": "24"
+          },
+          {
+            "selected": false,
+            "text": "PSLV ",
+            "value": "14"
+          },
+          {
+            "selected": false,
+            "text": "PSLV XL",
+            "value": "38"
+          },
+          {
+            "selected": false,
+            "text": "PSLV-CA",
+            "value": "68"
+          },
+          {
+            "selected": false,
+            "text": "Pegasus ",
+            "value": "149"
+          },
+          {
+            "selected": false,
+            "text": "Pegasus HAPS",
+            "value": "150"
+          },
+          {
+            "selected": false,
+            "text": "Pegasus Hybrid",
+            "value": "151"
+          },
+          {
+            "selected": false,
+            "text": "Pegasus XL",
+            "value": "8"
+          },
+          {
+            "selected": false,
+            "text": "Pegasus XL HAPS",
+            "value": "152"
+          },
+          {
+            "selected": false,
+            "text": "Proton-K",
+            "value": "131"
+          },
+          {
+            "selected": false,
+            "text": "Proton-K/DM-2",
+            "value": "99"
+          },
+          {
+            "selected": false,
+            "text": "Proton-M / Briz-M Enhanced",
+            "value": "98"
+          },
+          {
+            "selected": false,
+            "text": "Proton-M Briz-M",
+            "value": "4"
+          },
+          {
+            "selected": false,
+            "text": "Proton-M/Blok DM-03",
+            "value": "62"
+          },
+          {
+            "selected": false,
+            "text": "Proton-M/Blok DM-03 Enhanced",
+            "value": "129"
+          },
+          {
+            "selected": false,
+            "text": "Proton-M/DM-2 Enhanced",
+            "value": "120"
+          },
+          {
+            "selected": false,
+            "text": "Redstone MRLV",
+            "value": "141"
+          },
+          {
+            "selected": false,
+            "text": "Rokot",
+            "value": "15"
+          },
+          {
+            "selected": false,
+            "text": "Rokot / Briz-KM",
+            "value": "50"
+          },
+          {
+            "selected": false,
+            "text": "SLS ",
+            "value": "144"
+          },
+          {
+            "selected": false,
+            "text": "SPARK",
+            "value": "64"
+          },
+          {
+            "selected": false,
+            "text": "SS-520-4",
+            "value": "154"
+          },
+          {
+            "selected": false,
+            "text": "SS-520-5",
+            "value": "171"
+          },
+          {
+            "selected": false,
+            "text": "Safir ",
+            "value": "56"
+          },
+          {
+            "selected": false,
+            "text": "Safir 1B",
+            "value": "101"
+          },
+          {
+            "selected": false,
+            "text": "Saturn IB",
+            "value": "135"
+          },
+          {
+            "selected": false,
+            "text": "Saturn V",
+            "value": "136"
+          },
+          {
+            "selected": false,
+            "text": "Shavit ",
+            "value": "77"
+          },
+          {
+            "selected": false,
+            "text": "Shavit-2",
+            "value": "123"
+          },
+          {
+            "selected": false,
+            "text": "Simorgh ",
+            "value": "185"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz",
+            "value": "134"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2-1v",
+            "value": "172"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2-1v/Volga",
+            "value": "61"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1A",
+            "value": "49"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1A/Fregat",
+            "value": "83"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1A/Volga",
+            "value": "66"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1B",
+            "value": "3"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1B/Fregat",
+            "value": "65"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz 2.1B/Fregat-M",
+            "value": "153"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz Fregat",
+            "value": "147"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz STA/Fregat",
+            "value": "76"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz STB/Fregat",
+            "value": "52"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz STB/Fregat-MT",
+            "value": "96"
+          },
+          {
+            "selected": true,
+            "text": "Soyuz U",
+            "value": "35"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz-FG",
+            "value": "36"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz-FG/Fregat",
+            "value": "102"
+          },
+          {
+            "selected": false,
+            "text": "Soyuz-U2",
+            "value": "133"
+          },
+          {
+            "selected": false,
+            "text": "Space Shuttle Atlantis OV-104",
+            "value": "43"
+          },
+          {
+            "selected": false,
+            "text": "Space Shuttle Challenger OV-099",
+            "value": "44"
+          },
+          {
+            "selected": false,
+            "text": "Space Shuttle Columbia OV-102",
+            "value": "45"
+          },
+          {
+            "selected": false,
+            "text": "Space Shuttle Discovery OV-103",
+            "value": "46"
+          },
+          {
+            "selected": false,
+            "text": "Space Shuttle Endeavour OV-101",
+            "value": "47"
+          },
+          {
+            "selected": false,
+            "text": "Strela",
+            "value": "86"
+          },
+          {
+            "selected": false,
+            "text": "Titan II GLV",
+            "value": "137"
+          },
+          {
+            "selected": false,
+            "text": "Titan IIIE",
+            "value": "176"
+          },
+          {
+            "selected": false,
+            "text": "Titan IVB/Cenatur",
+            "value": "162"
+          },
+          {
+            "selected": false,
+            "text": "Unha",
+            "value": "115"
+          },
+          {
+            "selected": false,
+            "text": "Unha-3",
+            "value": "100"
+          },
+          {
+            "selected": false,
+            "text": "Vector-R",
+            "value": "177"
+          },
+          {
+            "selected": false,
+            "text": "Vega",
+            "value": "18"
+          },
+          {
+            "selected": false,
+            "text": "Vega-C",
+            "value": "163"
+          },
+          {
+            "selected": false,
+            "text": "Voskhod",
+            "value": "138"
+          },
+          {
+            "selected": false,
+            "text": "Vostok-K",
+            "value": "139"
+          },
+          {
+            "selected": false,
+            "text": "Zenit 2M",
+            "value": "113"
+          },
+          {
+            "selected": false,
+            "text": "Zenit 3F",
+            "value": "63"
+          },
+          {
+            "selected": false,
+            "text": "Zenit 3SL",
+            "value": "12"
+          },
+          {
+            "selected": false,
+            "text": "Zenit 3SLB",
+            "value": "94"
+          }
+        ],
+        "query": "SELECT name AS __text, id AS __value FROM rockets",
+        "refresh": 0,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "2000-01-22T21:19:42.984Z",
+    "to": "2018-05-15T04:53:47.254Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Rocket Information",
+  "uid": "jrHPwa7mk",
+  "version": 4
+}
