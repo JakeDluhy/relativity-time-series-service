@@ -1,6 +1,13 @@
 # Relativity Time Series Solution
 This is a solution to the relativity candidate project: https://github.com/RelativitySpace/sw_candidate_proj2. It uses TimescaleDB as a time series database with Grafana as an analytics dashboard. Node.js scripts are used to populate the database from the https://launchlibrary.net API for rocket launches.
 
+## Process
+After choosing the launchlibrary dataset for my project, I quickly realized that the relationship map was not simple. Reading through the (api docs)[http://launchlibrary.net/docs/1.4/api.html] I was able to roughly map out the database, adding in my own join tables where I deemed necessary.
+
+![Launchlibrary Relationship Map](./docs/relationship-map.png)
+
+Using that as a reference made it much easier to construct and seed my own database. Looking at the relations, it was clear that there was a certain order I would need to seed the DB in, in order to maintain foreign key constraints.
+
 ## Installation
 - Instructions are assuming Ubuntu 16.04
 - Install `git`: `apt-get update && apt-get install git-core`
